@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>menu</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+  <style>
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+      font-family: 'Press Start 2P', sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #252839;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    ul li {
+      list-style: none;
+    }
+
+    ul li a {
+      font-size: 2em;
+      text-decoration: none;
+      letter-spacing: 2px;
+      line-height: 1em;
+      text-transform: uppercase;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
+      position: relative;
+    }
+
+    ul li a::before {
+      content: attr(data-text);
+      position: absolute;
+      color: var(--clr);
+      width: 0;
+      overflow: hidden;
+      transition: 1s;
+      border-right: 8px solid var(--clr);
+      -webkit-text-stroke: 1px var(--clr);
+    }
+
+    ul li a:hover::before {
+      width: 100%;
+      filter: drop-shadow(0 0 25px var(--clr));
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li style="--clr:#00ade1">
+      <a href="#" data-text=" Home"> Home</a>
+    </li>
+    <li style="--clr:#ff6492">
+      <a href="#" data-text=" About"> About</a>
+    </li>
+    <li style="--clr:#ffdd1c">
+      <a href="#" data-text=" Services"> Services</a>
+    </li>
+    <li style="--clr:#00dc82">
+      <a href="#" data-text=" Blog"> Blog</a>
+    </li>
+    <li style="--clr:#dc00d4">
+      <a href="#" data-text=" Contact"> Contact</a>
+    </li>
+  </ul>
+</body>
+</html>
